@@ -6,36 +6,101 @@ body {
 	height: 100vh;
 	margin: 0;
 }
-
-.container{
-	width: 800px;
-	height: 600px;
+.header{
+	height: 70px;
+}
+.container-fluid{
+	width: 900px;
+	height: auto;
+	/*max-height: 600px;*/
 	border: 2px dashed black;
 	margin:0 auto;
-	position: absolute;
+	/*position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);*/
 }
 
 .menu-item{
 	float: left;
-	width: 400px;
-	height: 100px;
+	width: 300px;
+	height: 70px;
 	background-color: #cecece;
 	text-align:  center;
-	line-height:100px; 
+	line-height:70px; 
 	font-size: 20pt;
 	font-weight: bold;
 }
 
-#find:hover, #editor:hover {
+#find:hover, #editor:hover, #settings:hover {
 	background-color: black;
 	color: white;
 }
 
 .main{
-	width: 800px;
-	height: 500px;
+	width: auto;
+	height: 100%;
+	max-height: 100vh;
 	overflow: auto;
+	//padding: 20px;
+	margin: 20px;
+
+}
+
+
+#find-block-side, #find-block-info{
+	width: 430px;
+	min-height: 300px;
+	float: left;
+}
+
+
+.textbox { 
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(255, 255, 255, 0.44); 
+    color: #333; 
+    border: 1px solid #A4A4A4; 
+    padding: 4px 8px 4px 4px !important;
+    line-height: 1; 
+    width: 340px; 
+    height:25px; 
+  } 
+ .textbox:hover { 
+    border: 1px solid #FF00FF; 
+    box-shadow: inset 0px 1px 2px rgba(0,0,0,0.3); 
+    -moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.3); 
+    -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.3); 
+  } 
+ .textbox:focus { 
+    border: 1px solid #4d90fe; 
+    outline: none; 
+    box-shadow: inset 0px 1px 2px rgba(0,0,0,0.3);  
+    -moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.3); 
+    -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.3); 
+    background: rgb(255, 255, 255);
+  } 
+  
+table {width: 100%; border-collapse: collapse;}
+table td {padding: 12px 5px 12px 10px;}
+table thead tr {font-weight: bold; border-top: 1px solid #e8e9eb;}
+table tr {border-bottom: 1px solid #e8e9eb;}
+table tbody tr:hover {background: #e8f6ff;}
+
+#submit-find{
+	width: 354px;
+	height: 30px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	line-height:30px; 
+	cursor: pointer;
+}
+
+#submit-find:hover{
+	width: 350px;
+	height: 26px;
+	background-color: white;
+	color: black;
+	border: 2px solid black;
+	
 }
