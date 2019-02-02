@@ -34,9 +34,7 @@
 				
 				<br>
 				<div id="find-block-table">
-					<table id="table-after-search">
-						<?php include("script/show_table.php"); ?>
-					</table>
+					<?php include("script/show_table.php"); ?>
 				</div>
 				
 			</div>

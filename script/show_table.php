@@ -6,7 +6,7 @@ $result = $connection->query($sql);?>
 
 
 
-
+<table id="table-after-search">
 	<thead>
     <tr>
       <td>ID</td>
@@ -28,5 +28,5 @@ $result = $connection->query($sql);?>
 		 ?>
 	</tbody>
 
-
+</table>
 
