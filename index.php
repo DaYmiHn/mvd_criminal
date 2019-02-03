@@ -50,15 +50,24 @@ src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
 
 
 			<div id="settings-block"  style="display: none;">
-				<div class="login-block"><label for="" style="font-weight: 600; font-size: 15pt;">Войти:</label><br><br>
+				<div class="login-block"><label for="" style="font-weight: 600; font-size: 15pt;">Войти: &#128712;</label><br><br>
 					<div>
-						<label for="">Логин: </label><input type="text"><br><br><label for="">Пароль: </label><input type="password">
-					</div>
+						<label for="">Логин: </label>
+						<input type="text" class="textbox" id="log_log"><br><br>
+						<label for="">Пароль: </label>
+						<input type="password" class="textbox" id="log_pas">
+					</div><br>
+					<div id="submit-find" onClick="login()">Войти</div><br>
 				</div>
-				<div class="reg-block"><label for="" style="font-weight: 600; font-size: 15pt;">Зарегистрироваться:</label><br><br>
+				<div class="reg-block">
+					<label for="" style="font-weight: 600; font-size: 15pt;">Зарегистрироваться: &#128712;</label><br><br>
 					<div>
-						<label for="">Логин: </label><input type="text"><br><br><label for="">Пароль: </label><input type="password">
-					</div>
+						<label for="">Логин: </label>
+						<input type="text" class="textbox" id="reg_log"><br><br>
+						<label for="">Пароль: </label>
+						<input type="password" class="textbox" id="reg_pas">
+					</div><br>
+					<div id="submit-find" onClick="reg()">Зарегистрироваться</div><br>
 				</div>
 			</div>
 			

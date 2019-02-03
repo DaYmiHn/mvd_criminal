@@ -7,6 +7,7 @@ $result = $connection->query($sql);
 }
 $sql = "SELECT * FROM counter";
 $result = $connection->query($sql);
+
 echo "Посещений сайта:  ".$result->rowCount();
 
 ?>

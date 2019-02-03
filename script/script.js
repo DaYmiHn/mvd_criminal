@@ -40,7 +40,47 @@ function settings(){
     document.getElementById('find-block').style.display = "none";  
   }
 
+function reg() {
+    var log = document.getElementById("reg_log");
+    var pas = document.getElementById("reg_pas");
+    if (pas.value.length<8){
+      log.style.border="1px solid #A4A4A4"
+      pas.style.border="2px solid red"
+      alert("Пароль меньше 8 символов");  
+    } else{
+      if(log.value.length<8){
+        pas.style.border="1px solid #A4A4A4"
+        log.style.border="2px solid red"
+        alert("Логин меньше 8 символов"); } else {
+          log.style.border="1px solid #A4A4A4"
+          
+          xmlhttp=new XMLHttpRequest();
+          xmlhttp.open("GET","script/log-reg.php?reg_log="+log.value+"&reg_pas="+pas.value,true);
+          xmlhttp.send();
+        }
+    }
+}
 
+function login() {
+    var log = document.getElementById("log_log");
+    var pas = document.getElementById("log_pas");
+    if (pas.value.length<8){
+      log.style.border="1px solid #A4A4A4"
+      pas.style.border="2px solid red"
+      alert("Пароль меньше 8 символов");  
+    } else{
+      if(log.value.length<8){
+        pas.style.border="1px solid #A4A4A4"
+        log.style.border="2px solid red"
+        alert("Логин меньше 8 символов"); } else {
+          log.style.border="1px solid #A4A4A4"
+          
+          xmlhttp=new XMLHttpRequest();
+          xmlhttp.open("GET","script/log-reg.php?log_log="+log.value+"&log_pas="+pas.value,true);
+          xmlhttp.send();
+        }
+    }
+}
 
 
 function show() { 
