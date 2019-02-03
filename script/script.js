@@ -5,11 +5,11 @@ function find(){
     document.getElementById('editor').style.color = 'black';
     document.getElementById('settings').style.backgroundColor = "#cecece";
   	document.getElementById('settings').style.color = 'black';
-
-  	// document.getElementById('block-login').style.display = "";
-   //  document.getElementById('block-register').style.display = "none";
-  	// document.getElementById('block-register').style.display = "none";
-
+ document.cookie = "vkladka=find";
+ localStorage.setItem('klad', 'find');
+    document.getElementById('find-block').style.display = "";  
+    document.getElementById('editor-block').style.display = "none";
+    document.getElementById('settings-block').style.display = "none"; 
   }
 
 function editor(){
@@ -19,10 +19,11 @@ function editor(){
     document.getElementById('find').style.color = 'black';
     document.getElementById('settings').style.backgroundColor = "#cecece";
     document.getElementById('settings').style.color = 'black';
-
-    // document.getElementById('block-register').style.display = "";
-    // document.getElementById('block-login').style.display = "none";  
-    // document.getElementById('block-login').style.display = "none";  
+ document.cookie = "vklanka=editor";
+ localStorage.setItem('klad', 'editor');
+    document.getElementById('editor-block').style.display = "";
+    document.getElementById('find-block').style.display = "none";  
+    document.getElementById('settings-block').style.display = "none";  
   }
 
 function settings(){
@@ -32,11 +33,14 @@ function settings(){
     document.getElementById('find').style.color = 'black';
     document.getElementById('editor').style.backgroundColor = "#cecece";
   	document.getElementById('editor').style.color = 'black';
-
-  	// document.getElementById('block-register').style.display = "";
-   //  document.getElementById('block-login').style.display = "none";  
-  	// document.getElementById('block-login').style.display = "none";	
+ document.cookie = "vklanka=settings";
+ localStorage.setItem('klad', 'settings');
+    document.getElementById('settings-block').style.display = ""; 
+    document.getElementById('editor-block').style.display = "none";
+    document.getElementById('find-block').style.display = "none";  
   }
+
+
 
 
 function show() { 
@@ -45,6 +49,11 @@ function show() {
     var fio = document.getElementById("fio").value;
     var article = document.getElementById("article").value;
     var hash = document.getElementById("hash").value;
+    if (isNaN(id)) {alert("Вы ввели ID не число"); return;}
+    if (fio.length >30) {alert("Введённое ФИО через чур гиганское"); return;}
+    if (article.length >30) {alert("Введённая статья через чур гиганская"); return;}
+    if (hash.length >72) {alert("Введённый отпечаток через чур гиганский"); return;}
+    
     if(id!='') tmp=tmp+"id="+id+"&";
     if(fio!='') {tmp=tmp+"fio="+fio+"&";} 
     if(article!=''){tmp=tmp+"article="+article+"&";}

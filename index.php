@@ -4,9 +4,17 @@
 	<meta charset="UTF-8">
 	<title>Курсовик</title>
 	<link rel="stylesheet" href="style/style.css">
-
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="script/script.js"></script>
+	<link rel="shortcut icon" href="src/1.ico" type="image/x-icon">
+	<script type="text/javascript"
+src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
+<!-- <script type="text/javascript" src="http://insideonline.ru/free_versia_dla_slabovidyashih/special.js"></script> -->
 </head>
 <body>
+	<div class="counter">
+		<?php include ('script/counter.php') ?>
+	</div>
 	<div class="container-fluid">
 		<div class="header">
 			<div class="menu-item" id="find" onclick="find()"><label>ПОИСК</label></div>
@@ -30,13 +38,28 @@
 					<p>3. В поле 'Статья' введите номер статьи осуждённого</p> 
 					<p>4. В поле 'Отпечаток' введите 72-значный хэш отпечатка пальца осуждённого</p> 
 				</div>
-				
-				
 				<br>
 				<div id="find-block-table">
 					<?php include("script/show_table.php"); ?>
 				</div>
 				
+			</div>
+			<div id="editor-block" style="display: none; max-height: 80vh">
+				<iframe src="http://kursovik/1/querytable_.php?database=kursovik&table=criminal" width="100%" height="100%"  style="border:0; overflow: hidden;" scrolling="no"></iframe>
+			</div>
+
+
+			<div id="settings-block"  style="display: none;">
+				<div class="login-block"><label for="" style="font-weight: 600; font-size: 15pt;">Войти:</label><br><br>
+					<div>
+						<label for="">Логин: </label><input type="text"><br><br><label for="">Пароль: </label><input type="password">
+					</div>
+				</div>
+				<div class="reg-block"><label for="" style="font-weight: 600; font-size: 15pt;">Зарегистрироваться:</label><br><br>
+					<div>
+						<label for="">Логин: </label><input type="text"><br><br><label for="">Пароль: </label><input type="password">
+					</div>
+				</div>
 			</div>
 			
 			
@@ -44,6 +67,35 @@
 			
 		</div>
 	</div>
-	<script src="script/script.js"></script>
+
+	
+<script type="text/javascript">
+	
+$.getJSON('https://api.ipify.org?format=json', function(data){
+    console.log(data.ip);
+      $.ajax({
+      url: "script/counter.php?ip="+data.ip,
+      success: function(data){
+    }
+});
+
+
+});
+
+   
+
+
+
+$(function() {
+    var iframe = $('#editor-block', parent.document.body);
+    iframe.height($(document.body).height());
+});
+
+if (localStorage.getItem('klad') == "find"){find()}
+if (localStorage.getItem('klad') == "editor"){editor()}
+if (localStorage.getItem('klad') == "settings"){settings()}
+
+
+</script>
 </body>
 </html>

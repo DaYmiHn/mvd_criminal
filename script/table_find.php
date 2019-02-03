@@ -12,7 +12,7 @@ if($_GET["hash"]!='') {$k++; $find[$k]="`hash` LIKE '%".$_GET["hash"]."%' ";   }
 
 switch ($k) {
 	case 0:
-		echo "Вы нихуя не ввели";
+		echo "<td colspan='4'><center>Вы ничего не ввели</center></td>";
 		break;
 
 	case 1:
@@ -37,7 +37,7 @@ switch ($k) {
 }
 $sql = "SELECT * FROM `criminal` WHERE ".$tmp ;
 $result = $connection->query($sql);
-echo $sql;
+
 ?>
 
 <table id="table-after-search">
@@ -55,14 +55,26 @@ echo $sql;
   	</thead>
   	<tbody>
   		<?php 
-  		while($row=$result->fetch()) {
-	    $id[$i] = $row['id'];
-	    $fio[$i] = $row['fio'];
-	    $article[$i] = $row['article'];
-	    $hash[$i] = $row['hash'];
-	    echo "<tr><td>", $id[$i], "</td>","<td>", $fio[$i], "</td>","<td>", $article[$i], "</td>","<td>", $hash[$i], "</td>","</tr>"; 
-	    $i++;
+  		if ($k !=0) {
+  			if ($result->rowCount() == 0) {
+  			echo "<td colspan='4'><center>Ничего не найдено</center></td>";
+  		}
+  		else{
+  			while($row=$result->fetch()) {
+
+		    $id[$i] = $row['id'];
+		    $fio[$i] = $row['fio'];
+		    $article[$i] = $row['article'];
+		    $hash[$i] = $row['hash'];
+		    echo "<tr><td>", $id[$i], "</td>","<td>", $fio[$i], "</td>","<td>", $article[$i], "</td>","<td>", $hash[$i], "</td>","</tr>"; 
+		    $i++;
 		}
+
+  		}
+  		
+  		}
+
+  		
 		 ?>
 	</tbody>
 
