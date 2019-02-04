@@ -9,6 +9,14 @@
 	<link rel="shortcut icon" href="src/1.ico" type="image/x-icon">
 	<script type="text/javascript"
 src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
+<script>
+	if (localStorage.getItem('klad')== "find") {
+			document.write('<link type="text/css" id="dark-mode" rel="stylesheet" href="chrome-extension://jabpfojepndedlelamfloejfoopkogcf/data/content_script/general/dark_1.css">');
+	}
+    
+</script>
+
+
 <!-- <script type="text/javascript" src="http://insideonline.ru/free_versia_dla_slabovidyashih/special.js"></script> -->
 </head>
 <body>
@@ -50,7 +58,8 @@ src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
 
 
 			<div id="settings-block"  style="display: none;">
-				<div class="login-block"><label for="" style="font-weight: 600; font-size: 15pt;">Войти: &#128712;</label><br><br>
+				<div class="login-block">
+					<label for="" style="font-weight: 600; font-size: 15pt;" class="tooltip">Войти: &#128712;<span class="custom help">Логин и пароль должны быть не мение 8 символов</span></a></label></label><br><br>
 					<div>
 						<label for="">Логин: </label>
 						<input type="text" class="textbox" id="log_log"><br><br>
@@ -60,7 +69,7 @@ src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
 					<div id="submit-find" onClick="login()">Войти</div><br>
 				</div>
 				<div class="reg-block">
-					<label for="" style="font-weight: 600; font-size: 15pt;">Зарегистрироваться: &#128712;</label><br><br>
+					<label for="" style="font-weight: 600; font-size: 15pt;" class="tooltip">Зарегистрироваться: &#128712;<span class="custom help">Логин и пароль должны быть не мение 8 символов</span></a></label><br><br>
 					<div>
 						<label for="">Логин: </label>
 						<input type="text" class="textbox" id="reg_log"><br><br>
