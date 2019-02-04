@@ -1,27 +1,26 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	
 	<title>Курсовик</title>
 	<link rel="stylesheet" href="style/style.css">
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="script/script.js"></script>
 	<link rel="shortcut icon" href="src/1.ico" type="image/x-icon">
-	<script type="text/javascript"
-src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
-<script>
+	<script type="text/javascript" src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
+<!-- <script>
 	if (localStorage.getItem('klad')== "find") {
 			document.write('<link type="text/css" id="dark-mode" rel="stylesheet" href="chrome-extension://jabpfojepndedlelamfloejfoopkogcf/data/content_script/general/dark_1.css">');
 	}
-    
-</script>
-
+</script> -->
 
 <!-- <script type="text/javascript" src="http://insideonline.ru/free_versia_dla_slabovidyashih/special.js"></script> -->
 </head>
 <body>
 	<div class="counter">
-		<?php include ('script/counter.php') ?>
+		<?php include ('script/counter.php')?>
 	</div>
 	<div class="container-fluid">
 		<div class="header">

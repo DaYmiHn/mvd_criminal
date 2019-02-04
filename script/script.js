@@ -1,43 +1,37 @@
-
-
-
 function find(){
+ localStorage.setItem('klad', 'find');
     document.getElementById('find').style.backgroundColor = 'black';
-  	document.getElementById('find').style.color = 'white';
+    document.getElementById('find').style.color = 'white';
     document.getElementById('editor').style.backgroundColor = "#cecece";
     document.getElementById('editor').style.color = 'black';
     document.getElementById('settings').style.backgroundColor = "#cecece";
-  	document.getElementById('settings').style.color = 'black';
- document.cookie = "vkladka=find";
- localStorage.setItem('klad', 'find');
+    document.getElementById('settings').style.color = 'black';
     document.getElementById('find-block').style.display = "";  
     document.getElementById('editor-block').style.display = "none";
     document.getElementById('settings-block').style.display = "none"; 
   }
 
 function editor(){
+ localStorage.setItem('klad', 'editor');
     document.getElementById('editor').style.backgroundColor = 'black';
     document.getElementById('editor').style.color = 'white';
     document.getElementById('find').style.backgroundColor = "#cecece";
     document.getElementById('find').style.color = 'black';
     document.getElementById('settings').style.backgroundColor = "#cecece";
     document.getElementById('settings').style.color = 'black';
- document.cookie = "vklanka=editor";
- localStorage.setItem('klad', 'editor');
     document.getElementById('editor-block').style.display = "";
     document.getElementById('find-block').style.display = "none";  
     document.getElementById('settings-block').style.display = "none";  
   }
 
 function settings(){
+ localStorage.setItem('klad', 'settings');
     document.getElementById('settings').style.backgroundColor = 'black';
-  	document.getElementById('settings').style.color = 'white';
+    document.getElementById('settings').style.color = 'white';
     document.getElementById('find').style.backgroundColor = "#cecece";
     document.getElementById('find').style.color = 'black';
     document.getElementById('editor').style.backgroundColor = "#cecece";
-  	document.getElementById('editor').style.color = 'black';
- document.cookie = "vklanka=settings";
- localStorage.setItem('klad', 'settings');
+    document.getElementById('editor').style.color = 'black';
     document.getElementById('settings-block').style.display = ""; 
     document.getElementById('editor-block').style.display = "none";
     document.getElementById('find-block').style.display = "none";  
@@ -78,10 +72,15 @@ function login() {
         alert("Логин меньше 8 символов"); } else {
           log.style.border="1px solid #A4A4A4"
           
-          xmlhttp=new XMLHttpRequest();
-          xmlhttp.open("GET","script/log-reg.php?log_log="+log.value+"&log_pas="+pas.value,true);
-          xmlhttp.send();
-        }
+          $.ajax({
+            type: "GET",
+            url: "script/log-reg.php",
+            data: { log_log: log.value, log_pas: pas.value },
+            success: function(data) {
+              if (data == "да") {alert('Вошли'); window.location.reload();}
+              if (data == "не") {alert('Не вошли')}   }
+          });   
+      }
     }
 }
 

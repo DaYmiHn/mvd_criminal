@@ -141,8 +141,10 @@ table tbody tr:hover {background: #f5f5f5;} /*e8f6ff*/
 .counter {
 	color: white;
 	font-size: 15pt;
-	  position: absolute;
-	   vertical-align: bottom;
+	  //position: absolute;
+	   vertical-align: top;
+	   margin-top: -20px;
+	   margin-bottom: 20px;
 	  left: 0;
 	  bottom: 0;
 	  width: 100%;

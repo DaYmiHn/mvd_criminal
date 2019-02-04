@@ -1,4 +1,5 @@
 <?php 
+session_start(); 
 include("link_bd.php");
 if (isset($_GET["log_log"]) && isset($_GET["log_pas"])) {
 	
@@ -8,14 +9,19 @@ if (isset($_GET["log_log"]) && isset($_GET["log_pas"])) {
 	$result = $connection->query($sql);
 	$assocArray = $result->fetch();
 	if ($assocArray['password'] == $pas) {
-		echo "Пароль совпал";
+		
+    	$_SESSION["login"] = $log;
+    	$_SESSION["password"] = $pas;
+		print_r("да");
 	} else {
-		echo "Пароль не совпал<br><br>".md5($_GET["log_pas"])."<br>".$assocArray['password'];
+		$_SESSION["login"] = "Не вошёл";
+		echo "не";
 	}
 	
 
 }
 if (isset($_GET["reg_log"]) && isset($_GET["reg_pas"])) {
+	echo "Пароль не совпал";
 	$log = $_GET["reg_log"];
 	$pas = md5($_GET["reg_pas"]);
 	$sql = "INSERT INTO `users` (`login`, `password`) VALUES ('".$log."', '".$pas."')";

@@ -8,6 +8,6 @@ $result = $connection->query($sql);
 $sql = "SELECT * FROM counter";
 $result = $connection->query($sql);
 
-echo "Посещений сайта:  ".$result->rowCount()." <div class='tab'></div> +7(921)871-09-65 <div class='tab'></div>	sawi.denis@yandex.ru";
-
+echo "Посещений сайта:  ".$result->rowCount()." +7(921)871-09-65 	sawi.denis@yandex.ru";
+echo "                                  Логин - ".$_SESSION["login"];;
 ?>
