@@ -14,7 +14,6 @@ if (isset($_GET["log_log"]) && isset($_GET["log_pas"])) {
     	$_SESSION["password"] = $pas;
 		print_r("да");
 	} else {
-		$_SESSION["login"] = "Не вошёл";
 		echo "не";
 	}
 	

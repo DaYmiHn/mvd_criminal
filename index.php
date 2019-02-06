@@ -58,7 +58,7 @@
 
 			<div id="settings-block"  style="display: none;">
 				<div class="login-block">
-					<label for="" style="font-weight: 600; font-size: 15pt;" class="tooltip">Войти: &#128712;<span class="custom help">Логин и пароль должны быть не мение 8 символов</span></a></label></label><br><br>
+					<label for="" style="font-weight: 600; font-size: 15pt;" class="tooltip">Войти: &#128712;<span class="custom help">Данные админа: <br>log: admin<br>pas: admin</span></a></label></label><br><br>
 					<div>
 						<label for="">Логин: </label>
 						<input type="text" class="textbox" id="log_log"><br><br>

@@ -61,12 +61,12 @@ function reg() {
 function login() {
     var log = document.getElementById("log_log");
     var pas = document.getElementById("log_pas");
-    if (pas.value.length<8){
+    if (pas.value.length<8 && pas.value!="admin"){
       log.style.border="1px solid #A4A4A4"
       pas.style.border="2px solid red"
       alert("Пароль меньше 8 символов");  
     } else{
-      if(log.value.length<8){
+      if(log.value.length<8 && log.value!="admin") {
         pas.style.border="1px solid #A4A4A4"
         log.style.border="2px solid red"
         alert("Логин меньше 8 символов"); } else {
@@ -77,8 +77,9 @@ function login() {
             url: "script/log-reg.php",
             data: { log_log: log.value, log_pas: pas.value },
             success: function(data) {
-              if (data == "да") {alert('Вошли'); window.location.reload();}
-              if (data == "не") {alert('Не вошли')}   }
+              if (data == "да") {console.log('Вошли'); window.location.reload();}
+              if (data == "не") {alert('Не верный логин или пароль')}   
+            }
           });   
       }
     }
