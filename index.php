@@ -19,9 +19,6 @@
 <!-- <script type="text/javascript" src="http://insideonline.ru/free_versia_dla_slabovidyashih/special.js"></script> -->
 </head>
 <body>
-	<div class="counter">
-		<?php include ('script/counter.php')?>
-	</div>
 	<div class="container-fluid">
 		<div class="header">
 			<div class="menu-item" id="find" onclick="find()"><label>ПОИСК</label></div>
@@ -77,6 +74,14 @@
 					</div><br>
 					<div id="submit-find" onClick="reg()">Зарегистрироваться</div><br>
 				</div>
+				<div id="menu-block">
+					<div class="settings-menu-item">Мой кабинет</div>
+					<div class="settings-menu-item">Чат сотрудников</div>
+					<div class="settings-menu-item">Маршрут домой</div>
+					<div class="settings-menu-item"></div>
+					<div class="settings-menu-item"></div>
+					<div class="settings-menu-item"></div>
+				</div>
 			</div>
 			
 			
@@ -84,7 +89,9 @@
 			
 		</div>
 	</div>
-
+<div id="footer">
+   <?php include ('script/counter.php')?>
+  </div>
 	
 <script type="text/javascript">
 	
