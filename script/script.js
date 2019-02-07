@@ -85,6 +85,14 @@ function login() {
     }
 }
 
+function exit(){
+  $.ajax({
+    url: "script/exit.php",
+    success: function(data) {
+        window.location.reload();
+    }
+  });   
+}
 
 function show() { 
     var tmp = "";
