@@ -7,12 +7,12 @@
 	$row=$result->fetch();
 
 	echo 
-	"Фамилия:".$row['surname'].
-	"<br>Имя:".$row['name'].
-	"<br>Отчество:".$row['fathername'].
-	"<br>Домашний адрес:".$row['address'].
-	"<br>Звание:".$row['title'].
-	"<br>Моб. номер:".$row['phone_number'].
-	"<br>Стаж:".$row['seniority'].
-	"<br>Район:".$row['region'];
+	"Фамилия: ".$row['surname'].
+	"<br>Имя: ".$row['name'].
+	"<br>Отчество: ".$row['fathername'].
+	"<br>Домашний адрес: ".$row['address'].
+	"<br>Звание: ".$row['title'].
+	"<br>Моб. номер: ".$row['phone_number'].
+	"<br>Стаж: ".$row['seniority'].
+	"<br>Район: ".$row['region'];
  ?>
