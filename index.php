@@ -7,7 +7,9 @@
 	<title>Курсовик</title>
 	<link rel="stylesheet" href="style/style.css">
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=d40fb052-95ef-400a-b9ad-d8e14749a9be"></script>
 	<script src="script/script.js"></script>
+
 	<link rel="shortcut icon" href="src/1.ico" type="image/x-icon">
 	<script type="text/javascript" src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
 <!-- <script>
@@ -75,13 +77,17 @@
 					<div id="submit-find" onClick="reg()">Зарегистрироваться</div><br>
 				</div>
 				<div id="menu-block">
-					<div class="settings-menu-item">Моя анкета</div>
-					<div class="settings-menu-item">Чат сотрудников</div>
-					<div class="settings-menu-item">Маршрут домой</div>
-					<div class="settings-menu-item"></div>
-					<div class="settings-menu-item"></div>
-					<div class="settings-menu-item">Выйти</div>
+					<div class="settings-menu-item" onClick="anket()">Моя анкета</div>
+					<div class="settings-menu-item" onClick="chat()">Чат сотрудников</div>
+					<div class="settings-menu-item" onClick="marshrut()">Маршрут домой</div>
+					<div class="settings-menu-item" onClick="news()">Новости</div>
+					<div class="settings-menu-item" onClick="#()">Ещё что-то</div>
+					<div class="settings-menu-item" onClick="exit()">Выйти</div>
 				</div>
+<br>
+<br>
+
+<div id="map"></div>
 			</div>
 			
 			
@@ -89,6 +95,9 @@
 			
 		</div>
 	</div>
+
+	
+
 <div id="footer">
    <?php include ('script/counter.php')?>
   </div>
