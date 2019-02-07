@@ -20,7 +20,7 @@
 
 <!-- <script type="text/javascript" src="http://insideonline.ru/free_versia_dla_slabovidyashih/special.js"></script> -->
 </head>
-<body>
+<body><script>  localStorage.setItem('map', 'no-show');</script>
 	<div class="container-fluid">
 		<div class="header">
 			<div class="menu-item" id="find" onclick="find()"><label>ПОИСК</label></div>
@@ -94,6 +94,7 @@
 				</div>';
 				}
 				 ?>
+
 				
 <br>
 <br>
@@ -103,6 +104,19 @@
 				<div class="settings-menu-block" id="chat" style="display: none;"> </div>
 				<div class="settings-menu-block" id="news" style="display: none;"> </div>
 				<div class="settings-menu-block" id="something" style="display: none;"> </div>
+				
+				<?php 
+				if ($_SESSION["login"] == 'admin') {
+					echo '<div id="menu-block-admin">
+					<div class="settings-menu-item-admin" onClick="anket()">Удалить аккаунты</div>
+					<div class="settings-menu-item-admin" onClick="chat()">Удалить сообщения</div>
+					<div class="settings-menu-item-admin" onClick="marshrut()">Редактировать БД</div>
+					<div class="settings-menu-item-admin" onClick="news()">Удалить новости</div>
+				</div>';
+				}
+			?>
+
+
 			</div>
 			
 			

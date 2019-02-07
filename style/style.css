@@ -253,3 +253,27 @@ table tbody tr:hover {background: #f5f5f5;} /*e8f6ff*/
 	padding: 5px;
 	border: 5px solid white;
 }
+
+
+
+
+
+
+#menu-block-admin{
+	display: grid;
+	height: 100px;
+	grid-template-columns: repeat(2, 1fr);
+	margin: 40px 33px 40px 18px;
+}
+
+.settings-menu-item-admin{
+	width: 403.484px;
+	height: 49px;
+	border: 1px solid black;
+	text-align: center;
+	font-weight: 700;
+	line-height:50px;
+	cursor: pointer;
+	background-color: red;
+}
+

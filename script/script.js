@@ -125,7 +125,9 @@ function anket(){
 
 function marshrut(){
   hide_all();
+  
   document.getElementById('map').style.display = "";  
+  if (localStorage.getItem('map') == "show") {return;}
   $.ajax({
     url: "script/get_address.php",
     success: function(data) {
@@ -170,6 +172,7 @@ function marshrut(){
 }
     }
   });
+  localStorage.setItem('map', 'show');
 }
 
 
