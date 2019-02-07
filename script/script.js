@@ -94,7 +94,49 @@ function exit(){
   });   
 }
 
-function show() { 
+
+
+
+
+
+
+
+
+function anket(){
+  hide_all();
+  document.getElementById('anket').style.display = "";  
+  $.ajax({
+    url: "script/anket.php",
+    success: function(data) {
+      var element=document.getElementById('anket');
+      console.log(data);
+      element.innerHTML = data;
+    }
+  }); 
+}
+
+
+
+
+
+
+
+
+
+function marshrut(){
+  hide_all();
+  document.getElementById('map').style.display = "";  
+}
+
+function hide_all(){
+  var elems = document.getElementsByClassName('settings-menu-block');
+  for (var i=0;i<elems.length;i+=1){
+    elems[i].style.display = 'none';
+  }
+  
+}
+
+function find_show() { 
     var tmp = "";
     var id = document.getElementById("id").value;
     var fio = document.getElementById("fio").value;
@@ -137,7 +179,7 @@ ymaps.ready(init);  function init () {
         }
     }, {
         // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
-        boundsAutoApply: true
+        boundsAutoApply: false
     });
 
     // Создаем кнопку.

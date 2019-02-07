@@ -35,7 +35,7 @@
 					<input type="text"class="textbox" placeholder="ФИО" name="fio" id="fio"><br><br>
 					<input type="text"class="textbox" placeholder="Статья" name="article" id="article"><br><br>
 					<input type="text"class="textbox" placeholder="Отпечаток" name="hash" id="hash"><br><br>
-					<div id="submit-find" onClick="show()">НАЙТИ</div><br>
+					<div id="submit-find" onClick="find_show()">НАЙТИ</div><br>
 				</div>
 				<div id="find-block-info">
 					<label style="font-weight: 600; font-size: 16pt">Инструкция по поиску:</label><br>
@@ -51,12 +51,15 @@
 				
 			</div>
 			<div id="editor-block" style="display: none; max-height: 80vh">
-				<iframe src="http://kursovik/1/querytable_.php?database=kursovik&table=criminal" width="100%" height="100%"  style="border:0; overflow: hidden;" scrolling="no"></iframe>
+				<!-- <iframe src="http://kursovik/1/querytable_.php?database=kursovik&table=criminal" width="100%" height="100%"  style="border:0; overflow: hidden;" scrolling="no"></iframe> -->
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio officiis sit molestiae magnam inventore impedit, architecto ducimus commodi illum, maxime quod, magni harum dolor dicta totam voluptatem nesciunt atque consequatur.
 			</div>
 
 
 			<div id="settings-block"  style="display: none;">
-				<div class="login-block">
+				<?php 
+				if (!isset($_SESSION["login"])) {
+					echo '<div class="login-block">
 					<label for="" style="font-weight: 600; font-size: 15pt;" class="tooltip">Войти: &#128712;<span class="custom help">Данные админа: <br>log: admin<br>pas: admin</span></a></label></label><br><br>
 					<div>
 						<label for="">Логин: </label>
@@ -66,7 +69,7 @@
 					</div><br>
 					<div id="submit-find" onClick="login()">Войти</div><br>
 				</div>
-				<div class="reg-block">
+				<div class="reg-block" >
 					<label for="" style="font-weight: 600; font-size: 15pt;" class="tooltip">Зарегистрироваться: &#128712;<span class="custom help">Логин и пароль должны быть не мение 8 символов</span></a></label><br><br>
 					<div>
 						<label for="">Логин: </label>
@@ -75,19 +78,31 @@
 						<input type="password" class="textbox" id="reg_pas">
 					</div><br>
 					<div id="submit-find" onClick="reg()">Зарегистрироваться</div><br>
-				</div>
-				<div id="menu-block">
+				</div>';
+				}
+				 ?>
+				
+				<?php 
+				if (isset($_SESSION["login"])) {
+					echo '<div id="menu-block">
 					<div class="settings-menu-item" onClick="anket()">Моя анкета</div>
 					<div class="settings-menu-item" onClick="chat()">Чат сотрудников</div>
 					<div class="settings-menu-item" onClick="marshrut()">Маршрут домой</div>
 					<div class="settings-menu-item" onClick="news()">Новости</div>
-					<div class="settings-menu-item" onClick="#()">Ещё что-то</div>
+					<div class="settings-menu-item" onClick="something()">Ещё что-то</div>
 					<div class="settings-menu-item" onClick="exit()">Выйти</div>
-				</div>
+				</div>';
+				}
+				 ?>
+				
 <br>
 <br>
 
-<div id="map"></div>
+				<div class="settings-menu-block" id="map" style="display: none;"> </div>
+				<div class="settings-menu-block" id="anket" style="display: none;"> </div>
+				<div class="settings-menu-block" id="chat" style="display: none;"> </div>
+				<div class="settings-menu-block" id="news" style="display: none;"> </div>
+				<div class="settings-menu-block" id="something" style="display: none;"> </div>
 			</div>
 			
 			
