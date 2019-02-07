@@ -75,12 +75,12 @@
 					<div id="submit-find" onClick="reg()">Зарегистрироваться</div><br>
 				</div>
 				<div id="menu-block">
-					<div class="settings-menu-item">Мой кабинет</div>
+					<div class="settings-menu-item">Моя анкета</div>
 					<div class="settings-menu-item">Чат сотрудников</div>
 					<div class="settings-menu-item">Маршрут домой</div>
 					<div class="settings-menu-item"></div>
 					<div class="settings-menu-item"></div>
-					<div class="settings-menu-item"></div>
+					<div class="settings-menu-item">Выйти</div>
 				</div>
 			</div>
 			
