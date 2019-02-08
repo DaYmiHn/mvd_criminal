@@ -96,8 +96,7 @@
 				 ?>
 
 				
-<br>
-<br>
+
 
 				<div class="settings-menu-block" id="map" style="display: none;"> </div>
 				<div class="settings-menu-block" id="anket" style="display: none;"> </div>

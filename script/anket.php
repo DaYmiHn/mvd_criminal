@@ -5,8 +5,8 @@
 	$sql = "SELECT * FROM users WHERE login = '".$login."'";
 	$result = $connection->query($sql);
 	$row=$result->fetch();
-	if ($row['anket'] == "") {
-		echo "Го заполним анкету?????";
+	if ($row['anket'] != "true") {
+		include("new_anket.php");
 	} else {
 		echo 
 	"Фамилия: ".$row['surname'].

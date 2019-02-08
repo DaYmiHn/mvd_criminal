@@ -195,6 +195,61 @@ function marshrut(){
 
 
 
+
+
+
+
+
+
+
+
+function new_anket() {
+  var anket = document.getElementsByClassName('anket');
+  var mass =new Array (8);
+  for (var i=0;i<anket.length;i+=1){
+    mass[i] = anket[i].value;
+    console.log(anket[i].value);
+  }
+  $.ajax({
+    type: "GET",
+    url: "script/create_anket.php",
+    data: { surname: mass[0], 
+            name: mass[1],
+            fathername: mass[2],
+            address: mass[3],
+            title: mass[4],
+            phone_number: mass[5],
+            seniority: mass[6],
+            region: mass[7]
+          },
+    success: function(data) {
+      window.location.reload();
+      alert("Добавленно"); 
+    }
+  });  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function hide_all(){
   var elems = document.getElementsByClassName('settings-menu-block');
   for (var i=0;i<elems.length;i+=1){
