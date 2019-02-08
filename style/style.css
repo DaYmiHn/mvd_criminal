@@ -263,7 +263,7 @@ table tbody tr:hover {background: #f5f5f5;} /*e8f6ff*/
 	display: grid;
 	height: 100px;
 	grid-template-columns: repeat(2, 1fr);
-	margin: 40px 33px 40px 18px;
+	margin: 40px 33px 70px 18px;
 }
 
 .settings-menu-item-admin{

@@ -5,8 +5,10 @@
 	$sql = "SELECT * FROM users WHERE login = '".$login."'";
 	$result = $connection->query($sql);
 	$row=$result->fetch();
-
-	echo 
+	if ($row['anket'] == "") {
+		echo "Го заполним анкету?????";
+	} else {
+		echo 
 	"Фамилия: ".$row['surname'].
 	"<br>Имя: ".$row['name'].
 	"<br>Отчество: ".$row['fathername'].
@@ -15,4 +17,7 @@
 	"<br>Моб. номер: ".$row['phone_number'].
 	"<br>Стаж: ".$row['seniority'].
 	"<br>Район: ".$row['region'];
+	}
+
+	
  ?>

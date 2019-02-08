@@ -44,16 +44,25 @@ function reg() {
       log.style.border="1px solid #A4A4A4"
       pas.style.border="2px solid red"
       alert("Пароль меньше 8 символов");  
-    } else{
+    } else {
       if(log.value.length<8){
         pas.style.border="1px solid #A4A4A4"
         log.style.border="2px solid red"
         alert("Логин меньше 8 символов"); } else {
-          log.style.border="1px solid #A4A4A4"
-          
-          xmlhttp=new XMLHttpRequest();
-          xmlhttp.open("GET","script/log-reg.php?reg_log="+log.value+"&reg_pas="+pas.value,true);
-          xmlhttp.send();
+          log.style.border="1px solid #A4A4A4";
+          $.ajax({
+            type: "GET",
+            url: "script/log-reg.php",
+            data: { reg_log: log.value, reg_pas: pas.value },
+            success: function(url) {
+              console.log(url);
+            }
+          }); 
+
+
+
+
+    
         }
     }
 }
