@@ -263,10 +263,9 @@ function send_arrest() {
     data: { police: mass[0], 
             arrested: mass[1],
             date: mass[2],
-            article_ykrf: mass[3],
-            article_koaprf: mass[4],
-            region: mass[5],
-            opic: mass[6]
+            article: mass[3],
+            region: mass[4],
+            opic: mass[5]
           },
     success: function(data) {
       window.location.reload();
