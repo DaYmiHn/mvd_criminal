@@ -7,9 +7,10 @@
 	<title>Курсовик</title>
 	<link rel="stylesheet" href="style/style.css">
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=d40fb052-95ef-400a-b9ad-d8e14749a9be"></script>
+	<script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=d40fb052-95ef-400a-b9ad-d8e14749a9be"></script>
+	<script src="https://ruseller.com/lessons/les1896/demo/lib/device.min.js"></script>
 	<script src="script/script.js"></script>
-
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="shortcut icon" href="src/1.ico" type="image/x-icon">
 	<script type="text/javascript" src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
 <!-- <script>

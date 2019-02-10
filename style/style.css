@@ -292,3 +292,7 @@ table tbody tr:hover {background: #f5f5f5;} /*e8f6ff*/
 .input-anket>select{
 	height: 30px;
 }
+
+.swal-button {
+    background-color: #cecece!important;
+}

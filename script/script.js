@@ -43,7 +43,7 @@ function reg() {
     if (pas.value.length<8){
       log.style.border="1px solid #A4A4A4"
       pas.style.border="2px solid red"
-      alert("Пароль меньше 8 символов");  
+      swal ( "Нельзя так" ,  "Пароль меньше 8 символов!" ,  "error" )
     } else {
       if(log.value.length<8){
         pas.style.border="1px solid #A4A4A4"
