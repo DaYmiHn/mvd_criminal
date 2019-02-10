@@ -90,7 +90,7 @@
 					<div class="settings-menu-item" onClick="chat()">Чат сотрудников</div>
 					<div class="settings-menu-item" onClick="marshrut()">Маршрут домой</div>
 					<div class="settings-menu-item" onClick="news()">Новости</div>
-					<div class="settings-menu-item" onClick="something()">Ещё что-то</div>
+					<div class="settings-menu-item" onClick="arrest()">Задержание</div>
 					<div class="settings-menu-item" onClick="exit()">Выйти</div>
 				</div>';
 				}
@@ -103,7 +103,12 @@
 				<div class="settings-menu-block" id="anket" style="display: none;"> </div>
 				<div class="settings-menu-block" id="chat" style="display: none;"> </div>
 				<div class="settings-menu-block" id="news" style="display: none;"> </div>
-				<div class="settings-menu-block" id="something" style="display: none;"> </div>
+				<div class="settings-menu-block" id="arrest" style="display: none;">
+					<div class="new-arrest" onClick="new_arrest()">Новое задержание</div>
+					<div class="show-arrest" onClick="show_arrest()">Показать задержания</div>
+					<div id="settings-menu-block-new-arrest" style="display: none;"><?php include('script/new-arrest.php') ?></div>
+					<div id="settings-menu-block-show-arrest" style="display: none;"><?php include('script/show-arrest.php') ?></div>
+				</div>
 				
 				<?php 
 				if ($_SESSION["login"] == 'admin') {

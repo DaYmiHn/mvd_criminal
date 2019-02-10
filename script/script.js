@@ -124,6 +124,24 @@ function anket(){
   }); 
 }
 
+function arrest(){
+  hide_all();
+  document.getElementById('arrest').style.display = "";  
+  
+}
+
+
+function new_arrest(){
+  document.getElementById('settings-menu-block-new-arrest').style.display = '';
+  document.getElementById('settings-menu-block-show-arrest').style.display = "none";
+}
+
+
+function show_arrest(){
+  document.getElementById('settings-menu-block-new-arrest').style.display = "none";
+  document.getElementById('settings-menu-block-show-arrest').style.display = "";
+}
+
 
 
 
@@ -225,6 +243,32 @@ function new_anket() {
     success: function(data) {
       window.location.reload();
       alert("Добавленно"); 
+    }
+  });  
+}
+
+
+function send_arrest() {
+  var anket = document.getElementsByClassName('arrest');
+  var mass =new Array (7);
+  for (var i=0;i<anket.length;i+=1){
+    mass[i] = anket[i].value;
+    console.log(anket[i].value);
+  }
+  $.ajax({
+    type: "GET",
+    url: "script/create_arrest.php",
+    data: { police: mass[0], 
+            arrested: mass[1],
+            date: mass[2],
+            article_ykrf: mass[3],
+            article_koaprf: mass[4],
+            region: mass[5],
+            opic: mass[6]
+          },
+    success: function(data) {
+      window.location.reload();
+      swal ( "Отправленно");
     }
   });  
 }

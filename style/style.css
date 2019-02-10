@@ -57,7 +57,7 @@ body {
 	width: auto;
 	height: auto;
 	/*max-height: 100vh;*/
-	overflow: auto;
+	/*overflow: auto;*/
 	//padding: 20px;
 	margin: 20px;
 
@@ -295,4 +295,27 @@ table tbody tr:hover {background: #f5f5f5;} /*e8f6ff*/
 
 .swal-button {
     background-color: #cecece!important;
+}
+
+#arrest{
+	display: grid;
+	height: auto;
+	grid-template-columns: repeat(2, 1fr);
+	margin: 30px 33px 20px 18px;
+}
+
+.new-arrest, .show-arrest{
+	width: 403.484px;
+	height: 49px;
+	border: 1px solid black;
+	text-align: center;
+	font-weight: 700;
+	line-height:50px;
+	cursor: pointer;
+	background-color: #cecece;
+}
+
+#settings-menu-block-new-arrest, #settings-menu-block-show-arrest{
+	grid-column: span 2;
+
 }
