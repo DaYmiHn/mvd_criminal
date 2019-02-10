@@ -253,8 +253,10 @@ function send_arrest() {
   var mass =new Array (7);
   for (var i=0;i<anket.length;i+=1){
     mass[i] = anket[i].value;
-    console.log(anket[i].value);
+    
   }
+  mass[2] = mass[2].replace("T"," ")+":00";
+  console.log(mass[2]);
   $.ajax({
     type: "GET",
     url: "script/create_arrest.php",
