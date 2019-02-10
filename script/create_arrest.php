@@ -18,39 +18,37 @@
 		$result = $connection->query($sql);
 		$tmp_sql = $tmp_sql.$sql."<br>";
 		$row = $result->fetch();
-
-if ($_GET['article_koaprf']!='') {
-	if ($row['article_koaprf'] != ' ' && $row['article_koaprf'] != ''  && strpos($row['article_koaprf'], $_GET['article_koaprf']) === false){
+		if ($row['article_koaprf'] != '' && $row['article_koaprf']!=$_GET['article_koaprf']){
 			$tmp = $row['article_koaprf']." ".$_GET['article_koaprf'];
-			$sql = "UPDATE criminal SET article_koaprf = '".$tmp."' WHERE fio = '".$_GET['arrested']."'";
+			// $tmp = $_GET['article_ykrf']." ".$row['article_koaprf'];
+			$sql = "UPDATE criminal
+			SET article_koaprf = '".$tmp."' WHERE fio = '".$_GET['arrested']."'";
 			$tmp_sql = $tmp_sql.$sql."<br>";
 			$result = $connection->query($sql);
 		} else {
 			$tmp = $_GET['article_koaprf'];
-			$sql = "UPDATE criminal SET article_koaprf = '".$tmp."' WHERE fio = '".$_GET['arrested']."'";
+			$sql = "UPDATE criminal
+			SET article_koaprf = '".$tmp."' WHERE fio = '".$_GET['arrested']."'";
 			$tmp_sql = $tmp_sql.$sql."<br>";
 			$result = $connection->query($sql);
 		}
-}
-if ($_GET['article_ykrf']!='') {
-	if ($row['article_ykrf'] != ' ' && $row['article_ykrf'] != '' && strpos($row['article_ykrf'], $_GET['article_ykrf']) === false){
+
+
+
+		if ($row['article_ykrf'] != ''){
 			$tmp = $row['article_ykrf']." ".$_GET['article_ykrf'];
-			$sql = "UPDATE criminal SET article_ykrf = '".$tmp."' WHERE fio = '".$_GET['arrested']."'";
+			// $tmp = $_GET['article_ykrf']." ".$row['article_koaprf'];
+			$sql = "UPDATE criminal
+			SET article_ykrf = '".$tmp."' WHERE fio = '".$_GET['arrested']."'";
 			$tmp_sql = $tmp_sql.$sql."<br>";
 			$result = $connection->query($sql);
 		} else {
 			$tmp = $_GET['article_ykrf'];
-			$sql = "UPDATE criminal SET article_ykrf = '".$tmp."' WHERE fio = '".$_GET['arrested']."'";
+			$sql = "UPDATE criminal
+			SET article_ykrf = '".$tmp."' WHERE fio = '".$_GET['arrested']."'";
 			$tmp_sql = $tmp_sql.$sql."<br>";
 			$result = $connection->query($sql);
 		}
-}
-
-		
-
-
-
-		
 
 	}
 	$sql = "INSERT INTO `arrest` (`id`, `police`, `arrested`, `date`, `article_ykrf`, `article_koaprf`, `region`, `opic`) 
