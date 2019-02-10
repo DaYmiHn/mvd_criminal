@@ -29,7 +29,7 @@
 			VALUES (
 			 '".$_GET['arrested']."',
 			 '".$_GET['article']."',
-			 'хэшшш')";
+			 '".$_GET['hash']."')";
 			 echo $sql;
 	$result = $connection->query($sql);
 	}

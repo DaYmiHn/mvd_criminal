@@ -265,7 +265,8 @@ function send_arrest() {
             date: mass[2],
             article: mass[3],
             region: mass[4],
-            opic: mass[5]
+            opic: mass[5],
+            hash: mass[6]
           },
     success: function(data) {
       window.location.reload();
