@@ -20,12 +20,11 @@ if (isset($_GET["log_log"]) && isset($_GET["log_pas"])) {
 
 }
 if (isset($_GET["reg_log"]) && isset($_GET["reg_pas"])) {
-	echo "Пароль не совпал";
 	$log = $_GET["reg_log"];
 	$pas = md5($_GET["reg_pas"]);
 	$sql = "INSERT INTO `users` (`login`, `password`) VALUES ('".$log."', '".$pas."')";
-	echo $sql;
 	$result = $connection->query($sql);
+	echo $sql;
 
 }
 ?>
