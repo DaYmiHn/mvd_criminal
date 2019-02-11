@@ -41,7 +41,7 @@ $result = $connection->query($sql);?>
 	    $id[$i] = $row['id'];
 	    $fio[$i] = $row['fio'];
 	    $hash[$i] = $row['hash'];
-	    echo "<tr><td>", $id[$i], "</td>","<td>", $fio[$i], "</td>","<td style='font-size: 10pt;'>", arcticle($id[$i]), "</td>","<td>", $hash[$i], "</td>","</tr>"; 
+	    echo "<tr><td>", $id[$i], "</td>","<td>", $fio[$i], "</td>","<td>", arcticle($id[$i]), "</td>","<td>", $hash[$i], "</td>","</tr>"; 
 	    $i++;
 		}
 		 ?>
