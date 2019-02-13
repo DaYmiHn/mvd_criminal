@@ -26,7 +26,7 @@ $result = $connection->query($sql);?>
 	    "<td>", $arrested[$i], "</td>",
 	    "<td>", $date[$i], "</td>",
 	    "<td>", $pasp[$i], "</td>",
-	    "<td><a href='#' class='button9'>Скачать отчёт</a></td>",
+	    "<td><a target='_blank' href='../src/arrest/arrest_".$id[$i].".docx' class='button9'>Скачать отчёт</a></td>",
 	    "</tr>"; 
 	    $i++;
 		}

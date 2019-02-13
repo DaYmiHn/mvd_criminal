@@ -1,6 +1,8 @@
 <?php 
 	session_start();
 	include("link_bd.php");
+	
+
 	$sql = "INSERT INTO `arrest` (`id`, `police`, `arrested`, `date`, `article`,  `region`, `opic`, `hash`, `pasp`) 
 			VALUES (NULL,
 			 '".$_GET['police']."',
@@ -13,6 +15,8 @@
 			 '".$_GET['pasp']."')";
 			 echo $sql;
 	$result = $connection->query($sql);
+
+	
 
 	$sql = "SELECT * FROM criminal WHERE fio = '".$_GET['arrested']."'";
 	$result = $connection->query($sql);
@@ -37,4 +41,10 @@
 			 echo $sql;
 	$result = $connection->query($sql);
 	}
+	$sql= 'SELECT MAX(`id`) FROM `arrest`';
+	$result = $connection->query($sql); 
+	$row = $result->fetch(); 
+	$id = $row['MAX(`id`)'];
+	echo $id;
+	include("create_doc.php");
  ?>
