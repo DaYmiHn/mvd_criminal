@@ -55,22 +55,6 @@ $result = $connection->query($sql);
   	</thead>
   	<tbody>
   		<?php 
-
-  		function arcticle($art) {
-			include("link_bd.php");
-			if ($art == '') {
-				echo "нет";
-			} else {
-				$mass = split(" ", $art);
-				for ($i=0; $i < count($mass); $i++) { 
-					$sql = "SELECT article FROM article WHERE id = ".$mass[$i];
-					$result = $connection->query($sql);
-					$row=$result->fetch();
-					echo $row['article']."<br>";
-				}
-			}
-		}
-		
   		if ($k !=0) {
   			if ($result->rowCount() == 0) {
   			echo "<td colspan='4'><center>Ничего не найдено</center></td>";
@@ -80,8 +64,9 @@ $result = $connection->query($sql);
 
 		    $id[$i] = $row['id'];
 		    $fio[$i] = $row['fio'];
+		    $article[$i] = $row['article'];
 		    $hash[$i] = $row['hash'];
-		    echo "<tr><td>", $id[$i], "</td>","<td>", $fio[$i], "</td>","<td>", arcticle($row['article']), "</td>","<td>", $hash[$i], "</td>","</tr>"; 
+		    echo "<tr><td>", $id[$i], "</td>","<td>", $fio[$i], "</td>","<td>", $article[$i], "</td>","<td>", $hash[$i], "</td>","</tr>"; 
 		    $i++;
 		}
 
