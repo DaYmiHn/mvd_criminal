@@ -91,7 +91,7 @@
 					<div class="settings-menu-item" onClick="anket()">Моя анкета</div>
 					<div class="settings-menu-item" onClick="chat()">Чат сотрудников</div>
 					<div class="settings-menu-item" onClick="marshrut()">Маршрут домой</div>
-					<div class="settings-menu-item" onClick="news()">Новости</div>
+					<div class="settings-menu-item" onClick="logging()">Логи сайта</div>
 					<div class="settings-menu-item" onClick="arrest()">Задержание</div>
 					<div class="settings-menu-item" onClick="exit()">Выйти</div>
 				</div>';
@@ -104,7 +104,7 @@
 				<div class="settings-menu-block" id="map" style="display: none;"> </div>
 				<div class="settings-menu-block" id="anket" style="display: none;"> </div>
 				<div class="settings-menu-block" id="chat" style="display: none;"> </div>
-				<div class="settings-menu-block" id="news" style="display: none;"> </div>
+				<div class="settings-menu-block" id="logging" style="display: none;"><?php include('script/logging.php') ?> </div>
 				<div class="settings-menu-block" id="arrest" style="display: none;">
 					<div class="new-arrest" onClick="new_arrest()">Новое задержание</div>
 					<div class="show-arrest" onClick="show_arrest()">Показать задержания</div>

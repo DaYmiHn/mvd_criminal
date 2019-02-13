@@ -25,5 +25,6 @@
 			WHERE login = '".$_SESSION["login"]."'";
 	echo $sql;
 	$result = $connection->query($sql);
-
+	$info = $_GET['fathername'].$_GET['name'].$_GET['surname']."добавил анкету";
+	include "logging.php";
  ?>

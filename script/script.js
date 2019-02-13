@@ -105,7 +105,10 @@ function exit(){
 
 
 
-
+function logging(){
+  hide_all();
+  document.getElementById('logging').style.display = "";  
+}
 
 
 
