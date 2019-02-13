@@ -33,7 +33,7 @@ function generate_hash($length = 12) {
 <h2>Задержание:</h2>
 <label for="police">Задержал:   </label><input class="arrest" type="text" id="police" value="<?php echo $sotrydnik['surname']," ",$sotrydnik['name']," ",$sotrydnik['fathername']; ?>">    
 <label for="arrested">Задержан:   </label><input class="arrest" type="text" id="arrested"><br><br>
-<label for="localdate">Дата и время: </label> <input class="arrest" type="datetime-local" id="localdate" name="date" max="3000-06-30T16:30"/>     
+<label for="localdate">Дата и время: </label> <input class="arrest" type="datetime-local" id="localdate" name="date" max="2019-12-31T23:59" min="2019-01-01T00:00"/>     
 
 <label for="article">Нарушил: </label>УКРФ: <select class="arrest" name="" id="article"><?php  display_article();?></select> <br><br>
 
