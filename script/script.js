@@ -43,26 +43,17 @@ function reg() {
     if (pas.value.length<8){
       log.style.border="1px solid #A4A4A4"
       pas.style.border="2px solid red"
-      swal ( "Нельзя так" ,  "Пароль меньше 8 символов!" ,  "error" )
-    } else {
+      alert("Пароль меньше 8 символов");  
+    } else{
       if(log.value.length<8){
         pas.style.border="1px solid #A4A4A4"
         log.style.border="2px solid red"
         alert("Логин меньше 8 символов"); } else {
-          log.style.border="1px solid #A4A4A4";
-          $.ajax({
-            type: "GET",
-            url: "script/log-reg.php",
-            data: { reg_log: log.value, reg_pas: pas.value },
-            success: function(url) {
-              console.log(url);
-            }
-          }); 
-
-
-
-
-    
+          log.style.border="1px solid #A4A4A4"
+          
+          xmlhttp=new XMLHttpRequest();
+          xmlhttp.open("GET","script/log-reg.php?reg_log="+log.value+"&reg_pas="+pas.value,true);
+          xmlhttp.send();
         }
     }
 }
@@ -94,217 +85,8 @@ function login() {
     }
 }
 
-function exit(){
-  $.ajax({
-    url: "script/exit.php",
-    success: function(data) {
-        window.location.reload();
-    }
-  });   
-}
 
-
-
-
-
-
-
-
-
-function anket(){
-  hide_all();
-  document.getElementById('anket').style.display = "";  
-  $.ajax({
-    url: "script/anket.php",
-    success: function(data) {
-      var element=document.getElementById('anket');
-      console.log(data);
-      element.innerHTML = data;
-    }
-  }); 
-}
-
-function arrest(){
-  hide_all();
-  document.getElementById('arrest').style.display = "";  
-  
-}
-
-
-function new_arrest(){
-  document.getElementById('settings-menu-block-new-arrest').style.display = '';
-  document.getElementById('settings-menu-block-show-arrest').style.display = "none";
-}
-
-
-function show_arrest(){
-  document.getElementById('settings-menu-block-new-arrest').style.display = "none";
-  document.getElementById('settings-menu-block-show-arrest').style.display = "";
-}
-
-
-
-
-
-
-
-
-
-function marshrut(){
-  hide_all();
-  
-  document.getElementById('map').style.display = "";  
-  if (localStorage.getItem('map') == "show") {return;}
-  $.ajax({
-    url: "script/get_address.php",
-    success: function(data) {
-      console.log(data);
-      ymaps.ready(init);  function init () {
-    var multiRoute = new ymaps.multiRouter.MultiRoute({
-        referencePoints: [
-            "Сестрорецк, ул. Володарского, 7/9",
-            data
-        ],
-        params: {
-            routingMode: 'masstransit'
-        }
-    }, {
-        boundsAutoApply: false
-    });
-
-    var changeLayoutButton = new ymaps.control.Button({
-        data: { content: "Изменить макет подписи для пеших сегментов"},
-        options: { selectOnClick: true }
-    });
-
-    changeLayoutButton.events.add('select', function () {
-        multiRoute.options.set(
-            "routeWalkMarkerIconContentLayout",
-            ymaps.templateLayoutFactory.createClass('{{ properties.duration.text }}')
-        );
-    });
-
-    changeLayoutButton.events.add('deselect', function () {
-        multiRoute.options.unset("routeWalkMarkerIconContentLayout");
-    });
-
-    var myMap = new ymaps.Map('map', {
-        center: [60.086280, 29.958469],
-        zoom: 12,
-        controls: [changeLayoutButton]
-    }, {
-        buttonMaxWidth: 350
-    });
-    myMap.geoObjects.add(multiRoute);
-}
-    }
-  });
-  localStorage.setItem('map', 'show');
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function new_anket() {
-  var anket = document.getElementsByClassName('anket');
-  var mass =new Array (8);
-  for (var i=0;i<anket.length;i+=1){
-    mass[i] = anket[i].value;
-    console.log(anket[i].value);
-  }
-  $.ajax({
-    type: "GET",
-    url: "script/create_anket.php",
-    data: { surname: mass[0], 
-            name: mass[1],
-            fathername: mass[2],
-            address: mass[3],
-            title: mass[4],
-            phone_number: mass[5],
-            seniority: mass[6],
-            region: mass[7]
-          },
-    success: function(data) {
-      window.location.reload();
-      alert("Добавленно"); 
-    }
-  });  
-}
-
-
-function send_arrest() {
-  var anket = document.getElementsByClassName('arrest');
-  var mass =new Array (7);
-  for (var i=0;i<anket.length;i+=1){
-    mass[i] = anket[i].value;
-    
-  }
-  mass[2] = mass[2].replace("T"," ")+":00";
-  console.log(mass[2]);
-  $.ajax({
-    type: "GET",
-    url: "script/create_arrest.php",
-    data: { police: mass[0], 
-            arrested: mass[1],
-            date: mass[2],
-            article: mass[3],
-            region: mass[4],
-            opic: mass[5],
-            hash: mass[6]
-          },
-    success: function(data) {
-      window.location.reload();
-      swal ( "Отправленно");
-    }
-  });  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function hide_all(){
-  var elems = document.getElementsByClassName('settings-menu-block');
-  for (var i=0;i<elems.length;i+=1){
-    elems[i].style.display = 'none';
-  }
-  
-}
-
-function find_show() { 
+function show() { 
     var tmp = "";
     var id = document.getElementById("id").value;
     var fio = document.getElementById("fio").value;
@@ -331,8 +113,3 @@ function find_show() {
   // console.log(evt.item);
   //$("#eda").val(""); 
   };
-
-
-
-
-

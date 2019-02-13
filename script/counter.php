@@ -10,10 +10,5 @@ $result = $connection->query($sql);
 
 echo "<div class='topic'>Посещений сайта:  ".$result->rowCount()."</div> 
 		<div class='topic'>+7(921)871-09-65 	sawi.denis@yandex.ru</div>";
-
-if (isset($_SESSION["login"])) {
-	echo "<div class='topic'>Здравствуй,  ".$_SESSION["login"]."</div>";
-} else {
-	echo "<div class='topic'>Здравствуй, Гость</div>";
-}
+echo "<div class='topic'>Здравствуй,  ".$_SESSION["login"]."</div>";
 ?>
