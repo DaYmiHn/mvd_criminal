@@ -36,6 +36,7 @@
 					<input type="text"class="textbox" placeholder="ФИО" name="fio" id="fio"><br><br>
 					<input type="text"class="textbox" placeholder="Статья" name="article" id="article"><br><br>
 					<input type="text"class="textbox" placeholder="Отпечаток" name="hash" id="hash"><br><br>
+					<input type="text"class="textbox" placeholder="Паспорт" name="pasp" id="pasp"><br><br>
 					<div id="submit-find" onClick="find_show()">НАЙТИ</div><br>
 				</div>
 				<div id="find-block-info">

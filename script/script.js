@@ -266,7 +266,8 @@ function send_arrest() {
             article: mass[3],
             region: mass[4],
             opic: mass[5],
-            hash: mass[6]
+            hash: mass[6],
+            pasp: mass[7]
           },
     success: function(data) {
       window.location.reload();
@@ -310,15 +311,18 @@ function find_show() {
     var fio = document.getElementById("fio").value;
     var article = document.getElementById("article").value;
     var hash = document.getElementById("hash").value;
+    var pasp = document.getElementById("pasp").value;
     if (isNaN(id)) {alert("Вы ввели ID не число"); return;}
     if (fio.length >30) {alert("Введённое ФИО через чур гиганское"); return;}
     if (article.length >30) {alert("Введённая статья через чур гиганская"); return;}
     if (hash.length >72) {alert("Введённый отпечаток через чур гиганский"); return;}
+    if (hash.length >11) {alert("Введённый номер паспорта через чур гиганский"); return;}
     
     if(id!='') tmp=tmp+"id="+id+"&";
     if(fio!='') {tmp=tmp+"fio="+fio+"&";} 
     if(article!=''){tmp=tmp+"article="+article+"&";}
-    if(hash!='') {tmp=tmp+"hash="+hash;} 
+    if(hash!='') {tmp=tmp+"hash="+hash+"&";} 
+    if(pasp!='') {tmp=tmp+"pasp="+pasp;} 
     xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
     if (this.readyState==4 && this.status==200) {

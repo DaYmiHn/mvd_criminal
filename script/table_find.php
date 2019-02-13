@@ -22,6 +22,8 @@ if($_GET["article"]!='') {$k++; $find[$k]="`article` LIKE '%".$_GET["article"]."
 
 if($_GET["hash"]!='') {$k++; $find[$k]="`hash` LIKE '%".$_GET["hash"]."%' ";   }
 
+if($_GET["pasp"]!='') {$k++; $find[$k]="`pasp` LIKE '%".$_GET["pasp"]."%' ";   }
+
 switch ($k) {
 	case 0:
 		echo "<td colspan='4'><center>Вы ничего не ввели</center></td>";
@@ -38,12 +40,14 @@ switch ($k) {
 	case 4:
 		$tmp = $find[1]." AND ".$find[2]." AND ".$find[3]." AND ".$find[4];
 		break;
+	case 5:
+		$tmp = $find[1]." AND ".$find[2]." AND ".$find[3]." AND ".$find[4]." AND ".$find[5];
+		break;
 	default:
 		echo "Ошибочная ошибка";
 		break;
 }
 $sql = "SELECT * FROM `criminal` WHERE ".$tmp ;
-echo $sql;
 $result = $connection->query($sql);
 
 ?>
@@ -59,6 +63,7 @@ $result = $connection->query($sql);
       <td>ФИО</td>
       <td>Статья</td>
       <td>Отпечаток</td>
+      <td>Паспорт</td>
     </tr>
   	</thead>
   	<tbody>
@@ -81,7 +86,7 @@ $result = $connection->query($sql);
 
   		if ($k !=0) {
   			if ($result->rowCount() == 0) {
-  			echo "<td colspan='4'><center>Ничего не найдено</center></td>";
+  			echo "<td colspan='5'><center>Ничего не найдено</center></td>";
   		}
   		else{
   			while($row=$result->fetch()) {
@@ -89,7 +94,8 @@ $result = $connection->query($sql);
 		    $id[$i] = $row['id'];
 		    $fio[$i] = $row['fio'];
 		    $hash[$i] = $row['hash'];
-		    echo "<tr><td>", $id[$i], "</td>","<td>", $fio[$i], "</td>","<td>", arcticle($row['article']), "</td>","<td>", $hash[$i], "</td>","</tr>"; 
+		    $pasp[$i] = $row['pasp'];
+		    echo "<tr><td>", $id[$i], "</td>","<td>", $fio[$i], "</td>","<td>", arcticle($row['article']), "</td>","<td>", $hash[$i], "</td>","<td>", $pasp[$i], "</td>","</tr>"; 
 		    $i++;
 		}
 
