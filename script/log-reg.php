@@ -13,6 +13,8 @@ if (isset($_GET["log_log"]) && isset($_GET["log_pas"])) {
     	$_SESSION["login"] = $log;
     	$_SESSION["password"] = $pas;
 		print_r("да");
+		$info = "На сайт зашёл:<b> ".$log."</b>";
+		include "logging.php";
 	} else {
 		echo "не";
 	}

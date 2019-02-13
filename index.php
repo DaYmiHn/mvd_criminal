@@ -36,6 +36,7 @@
 					<input type="text"class="textbox" placeholder="ФИО" name="fio" id="fio"><br><br>
 					<input type="text"class="textbox" placeholder="Статья" name="article" id="article"><br><br>
 					<input type="text"class="textbox" placeholder="Отпечаток" name="hash" id="hash"><br><br>
+					<input type="text"class="textbox" placeholder="Паспорт" name="pasp" id="pasp"><br><br>
 					<div id="submit-find" onClick="find_show()">НАЙТИ</div><br>
 				</div>
 				<div id="find-block-info">
@@ -44,6 +45,7 @@
 					<p>2. В поле 'ФИО' можно указать те данные что знаете</p> 
 					<p>3. В поле 'Статья' введите номер статьи осуждённого</p> 
 					<p>4. В поле 'Отпечаток' введите 72-значный хэш отпечатка пальца осуждённого</p> 
+					<p>5. В поле 'Паспорт' номер и серию паспорта осуждённого</p> 
 				</div>
 				<br>
 				<div id="find-block-table">
@@ -89,7 +91,7 @@
 					<div class="settings-menu-item" onClick="anket()">Моя анкета</div>
 					<div class="settings-menu-item" onClick="chat()">Чат сотрудников</div>
 					<div class="settings-menu-item" onClick="marshrut()">Маршрут домой</div>
-					<div class="settings-menu-item" onClick="news()">Новости</div>
+					<div class="settings-menu-item" onClick="logging()">Логи сайта</div>
 					<div class="settings-menu-item" onClick="arrest()">Задержание</div>
 					<div class="settings-menu-item" onClick="exit()">Выйти</div>
 				</div>';
@@ -102,7 +104,7 @@
 				<div class="settings-menu-block" id="map" style="display: none;"> </div>
 				<div class="settings-menu-block" id="anket" style="display: none;"> </div>
 				<div class="settings-menu-block" id="chat" style="display: none;"> </div>
-				<div class="settings-menu-block" id="news" style="display: none;"> </div>
+				<div class="settings-menu-block" id="logging" style="display: none;"><?php include('script/logging.php') ?> </div>
 				<div class="settings-menu-block" id="arrest" style="display: none;">
 					<div class="new-arrest" onClick="new_arrest()">Новое задержание</div>
 					<div class="show-arrest" onClick="show_arrest()">Показать задержания</div>

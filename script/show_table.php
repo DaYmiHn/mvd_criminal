@@ -33,6 +33,7 @@ $result = $connection->query($sql);?>
       <td>ФИО</td>
       <td>Статья</td>
       <td>Отпечаток</td>
+      <td>Паспорт</td>
     </tr>
   	</thead>
   	<tbody>
@@ -41,7 +42,8 @@ $result = $connection->query($sql);?>
 	    $id[$i] = $row['id'];
 	    $fio[$i] = $row['fio'];
 	    $hash[$i] = $row['hash'];
-	    echo "<tr><td>", $id[$i], "</td>","<td>", $fio[$i], "</td>","<td>", arcticle($id[$i]), "</td>","<td>", $hash[$i], "</td>","</tr>"; 
+	    $pasp[$i] = $row['pasp'];
+	    echo "<tr><td>", $id[$i], "</td>","<td>", $fio[$i], "</td>","<td>", arcticle($id[$i]), "</td>","<td>", $hash[$i], "</td>","<td>", $pasp[$i], "</td>","</tr>"; 
 	    $i++;
 		}
 		 ?>
