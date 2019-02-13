@@ -18,7 +18,7 @@
 			}
 }
 function generate_hash($length = 12) {
-    $string = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $string = 'abcdefghijklmnopqrstuvwxyz'; //ABCDEFGHIJKLMNOPQRSTUVWXYZ
     $int = '0123456789';
     $charactersLength = strlen($string);
     $randomString = '';
