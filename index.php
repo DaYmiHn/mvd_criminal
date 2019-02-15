@@ -25,8 +25,8 @@
 	<div class="container-fluid">
 		<div class="header">
 			<div class="menu-item" id="find" onclick="find()"><label>ПОИСК</label></div>
-			<div class="menu-item" id="editor" onclick="editor()"><label>РЕДАКТОР</label></div>
-			<div class="menu-item" id="settings" onclick="settings()"><label>НАСТОЙКИ</label></div>
+			<div class="menu-item" id="settings" onclick="settings()"><label>МЕНЮ</label></div>
+			<div class="menu-item" id="editor" onclick="editor()"><label>ИНФОРМАЦИЯ</label></div>
 		</div>
 		<div class="main">
 			<div id="find-block">
