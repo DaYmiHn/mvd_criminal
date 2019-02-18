@@ -206,11 +206,45 @@ function marshrut(){
 }
 
 
+function hide_admin_func(){
+  var elems = document.getElementsByClassName('admin-func');
+  for (var j=0;j<elems.length;j+=1){
+    elems[j].style.display = 'none';
+  }
+}
+
+function delete_akk(){
+  hide_admin_func();
+  document.getElementById('delete_akk').style.display = "flex";   
+}
+
+function delete_akkk(){
+  $.ajax({
+    type: "GET",
+    url: "script/admin-funct.php",
+    data: { func: "delete_akk"},
+    success: function(data) {
+      alert("Удалено"); 
+    }
+  });
+}
 
 
+function delete_arr(){
+  hide_admin_func();
+  document.getElementById('delete_arr').style.display = "flex";   
+}
 
-
-
+function delete_arrr(){
+  $.ajax({
+    type: "GET",
+    url: "script/admin-funct.php",
+    data: { func: "delete_arr"},
+    success: function(data) {
+      alert("Удалено"); 
+    }
+  });
+}
 
 
 
@@ -297,9 +331,6 @@ function send_arrest() {
 
 
 
-
-
-
 function hide_all(){
   var elems = document.getElementsByClassName('settings-menu-block');
   for (var i=0;i<elems.length;i+=1){
@@ -319,7 +350,7 @@ function find_show() {
     if (fio.length >30) {alert("Введённое ФИО через чур гиганское"); return;}
     if (article.length >30) {alert("Введённая статья через чур гиганская"); return;}
     if (hash.length >72) {alert("Введённый отпечаток через чур гиганский"); return;}
-    if (hash.length >11) {alert("Введённый номер паспорта через чур гиганский"); return;}
+    if (pasp.length >11) {alert("Введённый номер паспорта через чур гиганский"); return;}
     
     if(id!='') tmp=tmp+"id="+id+"&";
     if(fio!='') {tmp=tmp+"fio="+fio+"&";} 

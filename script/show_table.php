@@ -18,13 +18,8 @@ function arcticle($id) {
 		}
 	}
 }
-
-
-
 $sql = "SELECT * FROM criminal";
 $result = $connection->query($sql);?>
-
-
 
 <table id="table-after-search">
 	<thead>

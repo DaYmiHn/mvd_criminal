@@ -115,14 +115,22 @@
 				<?php 
 				if ($_SESSION["login"] == 'admin') {
 					echo '<div id="menu-block-admin">
-					<div class="settings-menu-item-admin" onClick="anket()">Удалить аккаунты</div>
-					<div class="settings-menu-item-admin" onClick="chat()">Удалить сообщения</div>
-					<div class="settings-menu-item-admin" onClick="marshrut()">Редактировать БД</div>
-					<div class="settings-menu-item-admin" onClick="news()">Удалить новости</div>
-				</div>';
-				}
-			?>
+					<div class="settings-menu-item-admin" onClick="delete_akk()">Удалить все аккаунты</div>
+					<div class="settings-menu-item-admin" onClick="delete_arr()">Удалить все задержания</div>
+					<div class="settings-menu-item-admin" onClick="look_db()" style="grid-column:span 2">Просмотреть все БД</div>
+				</div>
+				<div class="admin-func settings-menu-block-delete-akk" id="delete_akk" style="display: none; justify-content: center;"> 
+				Удалить все аккаунты кроме Вашего?  <a href="#" class="button9" onClick="delete_akkk()">Да</a>
+				</div>
+				<div class="admin-func settings-menu-block-delete-arr" id="delete_arr" style="display: none; justify-content: center;"> 
+				Удалить все арресты?  <a href="#" class="button9" onClick="delete_arrr()">Да</a>
+				</div>
+				<div class="admin-func settings-menu-block-look-db" id="look_db" style="display: none;"> </div>
 
+				';
+				}
+				?>
+				
 
 			</div>
 			
